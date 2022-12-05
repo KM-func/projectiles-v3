@@ -3,7 +3,8 @@ $faded-gray: #8B8C93;
 $dark-teal: #151C1D;
 $darkest-blue: #0A0B12;
 $light-gray: #4E4F56;
-
+$indigo: #4453D7;
+$red: #D74444;
 body{
     background-color: $darkest-blue;
     color: white;
@@ -127,6 +128,7 @@ nav{
         }
 
         .form-div{
+            transition: ease-in-out all 0.5s;
             text-align: initial;
             margin: 93px 55px 0px;
             height: 625px;
@@ -163,10 +165,36 @@ nav{
                     outline: none; 
                     box-shadow: none;
                     border: 1px solid $faded-gray;
-                } 
+                    border-radius: 4px;
+                    font-size: 16px;
+                    padding: 15px 17px;
+                } input::placeholder{
+                    color: #6c757d;
+                    
+                    align-self: center;
+                    opacity: 1;
+                }
                 button{ 
                     position: absolute;
                     right: 0;
+                    border: $indigo 1px solid;
+                    outline: none;
+                    background: none;
+                    border-radius: 4px;
+                    color: white;
+                   padding: 13px 32px; 
+                   font-size: 16px;
+                   transition: 0.2s;
+                } button:hover{
+                    background-color: $indigo;
+
+                }
+                span{
+                    margin: 2px 0px 0px;
+                    display: block;
+                    color: $red;
+                    font-size: 14px;
+                    padding-left: 10px;
                 }
             }
             
