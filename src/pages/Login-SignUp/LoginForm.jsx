@@ -94,20 +94,22 @@ export default function LoginForm(props){
         if (!values.email) {
           errors.email = 'Email is Required'
             // 
-        } else if(!values.email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)){
-            // document.getElementById("email").style.borderColor = "#D74444"
+        } else if(!values.email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)){ 
             errors.email = 'Invalid Email'
-        }else if (values.email !== "") {
-            // document.getElementById("email").style.borderColor = "#4E4F56"
-        }
-        if (!values.password) {
-            // document.getElementById("password").onload.style.borderColor = "#D74444" 
-            errors.password = 'Password is Required'
         } 
-        else if(values.password !== "") {
-            values.password.style.borderColor = "#4E4F56"
-        }
+        if (!values.password) { 
+            errors.password = 'Password is Required'
+        }  
         return errors
+    }
+    const checkErrors = (id, error) => {
+        console.log(error)
+        if(error !== ""){
+            document.getElementById(id).style.borderColor = "#D74444";
+        } 
+        else if(error === undefined){
+            document.getElementById(id).style.borderColor = "#8B8C93" 
+        }
     }
     return(
         <div className='form-div'>
@@ -122,20 +124,24 @@ export default function LoginForm(props){
                 <form onSubmit={handleSubmit}>
                     <Field name="email">
                         {({ input, meta }) => (
-                        <div className="mb-3">
-                            <label>Email</label>
-                            <input {...input} type="email" id="email" placeholder="Email" />
-                            {meta.error && meta.touched && <span>{meta.error}</span>}
-                        </div>
+                            <div className="mb-3" onChange={e => checkErrors("email", meta.error)} onClick={e => checkErrors("email", meta.error)}>
+                                <label>Email</label>
+                                <input {...input} type="email" id="email" placeholder="Email"
+                                    // onClick={e => checkErrors("email", meta.error)}
+                                    />
+                                {meta.error && meta.touched && <span >{meta.error}</span>}
+                            </div>
                         )}
                     </Field>
                     <Field name="password" >
                         {({ input, meta }) => (
-                        <div className="mb-3">
-                            <label>Password</label>
-                            <input {...input} type="password" id="password" placeholder="Password" />
-                            {meta.error && meta.touched && <span>{meta.error}</span>}
-                        </div>
+                            <div className="mb-3" onClick={e => checkErrors("password", meta.error)} onChange={e => checkErrors("password", meta.error)}>
+                                <label>Password</label>
+                                <input {...input} type="password" id="password" placeholder="Password" 
+                                    // onClick={e => checkErrors("password", meta.error)}
+                                    />
+                                {meta.error && meta.touched && <span>{meta.error}</span>}
+                            </div>
                         )}
                     </Field>
                     <button type="submit">Log In</button>

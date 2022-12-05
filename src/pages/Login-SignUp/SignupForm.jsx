@@ -83,12 +83,21 @@ export default function SignupForm(props){
             errors.confirmPassword = 'Passwords do not match'
         }
         return errors
+    } 
+    const checkErrors = (id, error) => {
+        console.log(error)
+        if(error){
+            document.getElementById(id).style.borderColor = "#D74444";
+        } 
+        else if(error === undefined){
+            document.getElementById(id).style.borderColor = "#8B8C93" 
+        }
     }
     return(
         <div className='form-div'>
             <div className='form-header'>
-                <h2>Log In </h2>
-                <p>Don't have an account? <a onClick={props.changeToLogin} href="/">Sign Up</a></p>
+                <h2>Sign Up </h2>
+                <p>Already have an account? <a onClick={props.changeToLogin} href="/">Log in</a></p>
             </div>
             <Form 
             onSubmit={ onSubmit }
@@ -97,25 +106,25 @@ export default function SignupForm(props){
                 <form onSubmit={handleSubmit}>
                     <Field name="name">
                         {({ input, meta }) => (
-                        <div className="mb-3">
+                        <div className="mb-3"  onChange={e => checkErrors("name", meta.error)} onClick={e => checkErrors("name", meta.error)}>
                             <label>Name</label>
-                            <input {...input} type="text" id="name" placeholder="Name" />
+                            <input {...input} type="text" id="name"  placeholder="Name" />
                             {meta.error && meta.touched && <span>{meta.error}</span>}
                         </div>
                         )}
                     </Field>
                     <Field name="email">
                         {({ input, meta }) => (
-                        <div className="mb-3">
+                        <div className="mb-3"  onChange={e => checkErrors("email", meta.error)} onClick={e => checkErrors("email", meta.error)}>
                             <label>Email</label>
                             <input {...input} type="email" id="email" placeholder="Email" />
                             {meta.error && meta.touched && <span>{meta.error}</span>}
                         </div>
                         )}
                     </Field>
-                    <Field name="password" >
+                    <Field name="password">
                         {({ input, meta }) => (
-                        <div className="mb-3">
+                        <div className="mb-3" onChange={e => checkErrors("password", meta.error)} onClick={e => checkErrors("password", meta.error)}>
                             <label>Password</label>
                             <input {...input} type="password" id="password" placeholder="Password" />
                             {meta.error && meta.touched && <span>{meta.error}</span>}
@@ -124,7 +133,7 @@ export default function SignupForm(props){
                     </Field>
                     <Field name="confirmPassword" >
                         {({ input, meta }) => (
-                        <div className="mb-3">
+                        <div className="mb-3" onChange={e => checkErrors("confirmPassword", meta.error)} onClick={e => checkErrors("confirmPassword", meta.error)} >
                             <label>Confirm Password</label>
                             <input {...input} type="password" id="confirmPassword" placeholder="Confirm password" />
                             {meta.error && meta.touched && <span>{meta.error}</span>}
