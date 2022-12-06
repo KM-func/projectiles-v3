@@ -1,5 +1,8 @@
 // import Form from 'react-bootstrap/Form';
 import { Form , Field } from "react-final-form";
+import { useState } from "react";
+import EyeOpen from "../../assets/images/eye_open.svg"
+import EyeClosed from "../../assets/images/eye_closed.svg"
 
 export default function SignupForm(props){ 
     // const passwordVisibility = (e) =>{
@@ -50,6 +53,28 @@ export default function SignupForm(props){
     //         </Form> 
     //     </div> 
     // )
+
+   
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfPassword, setShowConfPassword] = useState(false);
+
+    const togglePassword = (e) => {
+        e.preventDefault()
+        if(showPassword === false){
+            setShowPassword(true)
+        } else{
+            setShowPassword(false)
+        }
+    }
+    const toggleConfPassword = (e) => {
+        e.preventDefault()
+        if(showConfPassword === false){
+            setShowConfPassword(true)
+        } else{
+            setShowConfPassword(false)
+        }
+    }
+
     const onSubmit = (e) =>{
         // debugger
         console.log(e)
@@ -66,15 +91,12 @@ export default function SignupForm(props){
             // 
         } else if(!values.email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)){
             errors.email = 'Invalid Email'
-        }else if (values.email !== "") {
-            // document.getElementById("email").style.borderColor = "#4E4F56"
+        }else if (values.email !== "") { 
         }
-        if (!values.password) {
-            // document.getElementById("password").style.borderColor = "red"
+        if (!values.password) { 
             errors.password = 'Password is Required'
         } 
-        else if(values.password !== "") {
-            // document.getElementById("password").style.borderColor = "#4E4F56"
+        else if(values.password !== "") { 
         }
         if(!values.confirmPassword){
             errors.confirmPassword = 'Please confirm password'
@@ -106,7 +128,7 @@ export default function SignupForm(props){
                 <form onSubmit={handleSubmit}>
                     <Field name="name">
                         {({ input, meta }) => (
-                        <div className="mb-3"  onChange={e => checkErrors("name", meta.error)} onClick={e => checkErrors("name", meta.error)}>
+                        <div className="mb-3" onBlur={e => checkErrors("name", meta.error)} onChange={e => checkErrors("name", meta.error)} onClick={e => checkErrors("name", meta.error)}>
                             <label>Name</label>
                             <input {...input} type="text" id="name"  placeholder="Name" />
                             {meta.error && meta.touched && <span>{meta.error}</span>}
@@ -115,7 +137,7 @@ export default function SignupForm(props){
                     </Field>
                     <Field name="email">
                         {({ input, meta }) => (
-                        <div className="mb-3"  onChange={e => checkErrors("email", meta.error)} onClick={e => checkErrors("email", meta.error)}>
+                        <div className="mb-3" onBlur={e => checkErrors("email", meta.error)} onChange={e => checkErrors("email", meta.error)} onClick={e => checkErrors("email", meta.error)}>
                             <label>Email</label>
                             <input {...input} type="email" id="email" placeholder="Email" />
                             {meta.error && meta.touched && <span>{meta.error}</span>}
@@ -124,18 +146,24 @@ export default function SignupForm(props){
                     </Field>
                     <Field name="password">
                         {({ input, meta }) => (
-                        <div className="mb-3" onChange={e => checkErrors("password", meta.error)} onClick={e => checkErrors("password", meta.error)}>
+                        <div className="mb-3" onBlur={e => checkErrors("password", meta.error)} onChange={e => checkErrors("password", meta.error)} onClick={e => checkErrors("password", meta.error)}>
                             <label>Password</label>
-                            <input {...input} type="password" id="password" placeholder="Password" />
+                            <div className="password-div"> 
+                                <input {...input} type={showPassword? "text" : "password"} id="password" placeholder="Password" />
+                                <a href="/" onClick={togglePassword}><img src={showPassword ? EyeClosed : EyeOpen} alt="show/hide password icon"/> </a>
+                            </div>
                             {meta.error && meta.touched && <span>{meta.error}</span>}
                         </div>
                         )}
                     </Field>
                     <Field name="confirmPassword" >
                         {({ input, meta }) => (
-                        <div className="mb-3" onChange={e => checkErrors("confirmPassword", meta.error)} onClick={e => checkErrors("confirmPassword", meta.error)} >
+                        <div className="mb-3" onBlur={e => checkErrors("confirmPassword", meta.error)} onChange={e => checkErrors("confirmPassword", meta.error)} onClick={e => checkErrors("confirmPassword", meta.error)} >
                             <label>Confirm Password</label>
-                            <input {...input} type="password" id="confirmPassword" placeholder="Confirm password" />
+                            <div className="password-div"> 
+                                <input {...input} type={showConfPassword? "text" : "password"} id="confirmPassword" placeholder="Password" />
+                                <a href="/" onClick={toggleConfPassword}><img src={showConfPassword ? EyeClosed : EyeOpen} alt="show/hide password icon"/> </a>
+                            </div>
                             {meta.error && meta.touched && <span>{meta.error}</span>}
                         </div>
                         )}
