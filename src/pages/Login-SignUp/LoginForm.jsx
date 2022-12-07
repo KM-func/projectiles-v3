@@ -10,7 +10,7 @@ export default function LoginForm(props){
         console.log(e);
     }
     const validate = values => {
-        const errors = {}
+        const errors = {};
         if (!values.email) {
           errors.email = 'Email is Required';
         } else if(!values.email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)){ 

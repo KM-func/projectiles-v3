@@ -50,7 +50,7 @@ export default function SignupForm(props){
         return errors;
     } 
     const checkErrors = (id, error) => {
-        console.log(error)
+        console.log(error);
         if(error){
             document.getElementById(id).style.borderColor = "#D74444";
         } 
