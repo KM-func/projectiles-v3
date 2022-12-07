@@ -65,12 +65,9 @@ export default function LoginSignup(props){
             </div>
             {/* add conditional if signup or login form appears */}
             <div className="form-container">
-                <img src={Trails2} alt="trails"/>
-
+                <img src={Trails2} alt="trails"/> 
                 {
-                    loginMode ? 
-                    <SignupForm changeToLogin={changeToLogin}/> :
-                    <LoginForm changeToLogin={changeToLogin}/>
+                    loginMode ? <SignupForm changeToLogin={changeToLogin}/> : <LoginForm changeToLogin={changeToLogin}/>
                 }
                 <img src={Trails2} className="flipped" alt="trails"/>
                 <p>

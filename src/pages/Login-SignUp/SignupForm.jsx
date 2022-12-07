@@ -8,21 +8,41 @@ export default function SignupForm(props){
     const [showConfPassword, setShowConfPassword] = useState(false);
 
     const togglePassword = (e) => {
-        e.preventDefault()
-        if(showPassword === false){
-            setShowPassword(true);
-        } else{
-            setShowPassword(false);
+        // e.preventDefault()
+        if(e.target.id === "toggle-password"){
+            if(e.target.classList.contains("eye-open")){
+                e.target.classList.remove("eye-open");
+                e.target.classList.add("eye-closed"); 
+            } else {
+                e.target.classList.remove("eye-closed");
+                e.target.classList.add("eye-open");
+            }
+            showPassword === false ? setShowPassword(true) : setShowPassword(false)
+        } else {
+            if(e.target.classList.contains("eye-open")){
+                e.target.classList.remove("eye-open");
+                e.target.classList.add("eye-closed");
+            } else {
+                e.target.classList.remove("eye-closed");
+                e.target.classList.add("eye-open");
+            }
+            showConfPassword === false ? setShowConfPassword(true) : setShowConfPassword(false)
         }
+        // if(showPassword === false){
+        //     setShowPassword(true);
+        // } else{
+        //     setShowPassword(false);
+        // }
+        console.log(e.target)
     }
-    const toggleConfPassword = (e) => {
-        e.preventDefault()
-        if(showConfPassword === false){
-            setShowConfPassword(true);
-        } else{
-            setShowConfPassword(false);
-        }
-    }
+    // const toggleConfPassword = (e) => {
+    //     e.preventDefault()
+    //     if(showConfPassword === false){
+    //         setShowConfPassword(true);
+    //     } else{
+    //         setShowConfPassword(false);
+    //     }
+    // }
 
     const onSubmit = (e) =>{
         console.log(e);
@@ -93,7 +113,9 @@ export default function SignupForm(props){
                             <label>Password</label>
                             <div className="password-div"> 
                                 <input {...input} type={showPassword? "text" : "password"} id="password" placeholder="Password" />
-                                <a href="/" onClick={togglePassword}><img src={showPassword ? EyeClosed : EyeOpen} alt="show/hide password icon"/> </a>
+                                <button id="toggle-password" className="eye-open" type="button" onClick={togglePassword}>
+                                    {/* <img src={showPassword ? EyeClosed : EyeOpen} alt="show/hide password icon"/> */}
+                                </button>
                             </div>
                             {meta.error && meta.touched && <span>{meta.error}</span>}
                         </div>
@@ -104,8 +126,10 @@ export default function SignupForm(props){
                         <div className="mb-3" onBlur={e => checkErrors("confirmPassword", meta.error)} onChange={e => checkErrors("confirmPassword", meta.error)} onClick={e => checkErrors("confirmPassword", meta.error)} >
                             <label>Confirm Password</label>
                             <div className="password-div"> 
-                                <input {...input} type={showConfPassword? "text" : "password"} id="confirmPassword" placeholder="Password" />
-                                <a href="/" onClick={toggleConfPassword}><img src={showConfPassword ? EyeClosed : EyeOpen} alt="show/hide password icon"/> </a>
+                                <input {...input} type={showPassword? "text" : "password"} id="confirmPassword" placeholder="Password" />
+                                <button id="toggle-confirm-password" type="button" className="eye-open" onClick={togglePassword}>
+                                    {/* <img src={showPassword ? EyeClosed : EyeOpen} alt="show/hide password icon"/> */}
+                                </button>
                             </div>
                             {meta.error && meta.touched && <span>{meta.error}</span>}
                         </div>
