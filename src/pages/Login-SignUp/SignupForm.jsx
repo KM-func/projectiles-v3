@@ -1,110 +1,53 @@
-// import Form from 'react-bootstrap/Form';
 import { Form , Field } from "react-final-form";
 import { useState } from "react";
 import EyeOpen from "../../assets/images/eye_open.svg"
 import EyeClosed from "../../assets/images/eye_closed.svg"
 
-export default function SignupForm(props){ 
-    // const passwordVisibility = (e) =>{
-    //     e.preventDefault(); 
-        
-    //     var x = document.getElementById("password");
-    //     var show_eye = document.getElementById("show_eye");
-    //     var hide_eye = document.getElementById("hide_eye");
-    //     hide_eye.classList.remove("d-none");
-    //     if (x.type === "password") {
-    //       x.type = "text";
-    //       show_eye.style.display = "none";
-    //       hide_eye.style.display = "block";
-    //     } else {
-    //       x.type = "password";
-    //       show_eye.style.display = "block";
-    //       hide_eye.style.display = "none";
-    //     } 
-    // }
-    
-    // return( 
-    //     <div className='form-div'>
-    //         <div className='form-header'>
-    //             <h2>Sign Up</h2>
-    //             <p>Already have an account? <a onClick={props.changeToLogin} href="/">Log In</a></p>
-    //         </div>
-    //         <Form onSubmit={props.handleSubmit}>
-    //             <Form.Group className="mb-3" controlId="name">
-    //                 <Form.Label>Name</Form.Label>
-    //                 <Form.Control className='outline-none' type="text" placeholder="Enter name" /> 
-    //             </Form.Group>
-    //             <Form.Group className="mb-3" controlId="email">
-    //                 <Form.Label>Email</Form.Label>
-    //                 <Form.Control type="email" placeholder="Enter email" /> 
-    //             </Form.Group>
-    //             <Form.Group className="mb-3" controlId="password">
-    //                 <Form.Label>Password</Form.Label>
-    //                 <Form.Control type="password" placeholder="Enter Password" /> 
-    //             </Form.Group>
-    //             <Form.Group className="mb-3" controlId="confirm-password">
-    //                 <Form.Label>Confirm Password</Form.Label>
-    //                 <Form.Control type="password" placeholder="Confirm Password" /> 
-    //             </Form.Group>
-    //             {/* Add the errors later on */}
-    //             <button variant="primary" type="submit" className='mt-3'>
-    //                 Sign In
-    //             </button>
-    //         </Form> 
-    //     </div> 
-    // )
-
-   
+export default function SignupForm(props){
     const [showPassword, setShowPassword] = useState(false);
     const [showConfPassword, setShowConfPassword] = useState(false);
 
     const togglePassword = (e) => {
         e.preventDefault()
         if(showPassword === false){
-            setShowPassword(true)
+            setShowPassword(true);
         } else{
-            setShowPassword(false)
+            setShowPassword(false);
         }
     }
     const toggleConfPassword = (e) => {
         e.preventDefault()
         if(showConfPassword === false){
-            setShowConfPassword(true)
+            setShowConfPassword(true);
         } else{
-            setShowConfPassword(false)
+            setShowConfPassword(false);
         }
     }
 
     const onSubmit = (e) =>{
-        // debugger
-        console.log(e)
+        console.log(e);
     }
     const validate = values => {
-        const errors = {}
+        const errors = {};
         if(!values.name){
-            errors.name = "Name is Required"
+            errors.name = "Name is Required";
         } else if(values.name.match(/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~1234567890]/)){
-            errors.name = "Cannot contain special characters or numbers"
+            errors.name = "Cannot contain special characters or numbers";
         }
         if (!values.email) {
-          errors.email = 'Email is Required'
-            // 
+          errors.email = 'Email is Required';
         } else if(!values.email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)){
-            errors.email = 'Invalid Email'
-        }else if (values.email !== "") { 
+            errors.email = 'Invalid Email';
         }
         if (!values.password) { 
-            errors.password = 'Password is Required'
-        } 
-        else if(values.password !== "") { 
+            errors.password = 'Password is Required';
         }
         if(!values.confirmPassword){
-            errors.confirmPassword = 'Please confirm password'
+            errors.confirmPassword = 'Please confirm password';
+        } else if(values.confirmPassword !== values.password){
+            errors.confirmPassword = 'Passwords do not match';
         }
-        else if(values.confirmPassword !== values.password){
-            errors.confirmPassword = 'Passwords do not match'
-        }
-        return errors
+        return errors;
     } 
     const checkErrors = (id, error) => {
         console.log(error)
@@ -112,7 +55,7 @@ export default function SignupForm(props){
             document.getElementById(id).style.borderColor = "#D74444";
         } 
         else if(error === undefined){
-            document.getElementById(id).style.borderColor = "#8B8C93" 
+            document.getElementById(id).style.borderColor = "#8B8C93";
         }
     }
     return(
