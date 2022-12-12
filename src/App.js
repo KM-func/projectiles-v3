@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "./assets/stylesheets/style.scss"
 import LoginSignup from "./pages/Login-SignUp/LoginSignup"; 
 function App() { 
-  return (  
+  return (   
     <div className="App">
       <nav>
         <h1 className="logo"> ProjecTiles </h1>
