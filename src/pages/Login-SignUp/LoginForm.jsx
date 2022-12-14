@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Form , Field } from "react-final-form";
- 
+import { email_pattern } from "../../constants/constants.js"
+import { Link } from "react-router-dom";
+
 export default function LoginForm(props){
     const [showPassword, setShowPassword] = useState(false);
 
@@ -11,7 +13,7 @@ export default function LoginForm(props){
         const errors = {};
         if (!values.email){
           errors.email = "Email is Required";
-        } else if(!values.email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)){ 
+        } else if(!values.email.match(email_pattern)){ 
             errors.email = "Invalid Email";
         } 
         if (!values.password){ 
@@ -40,7 +42,7 @@ export default function LoginForm(props){
         <div className="form-div">
             <div className="form-header">
                 <h2>Log In </h2>
-                <p>Don't have an account? <a onClick={props.changeToLogin} href="/">Sign Up</a></p>
+                <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
             </div>
             <Form 
             onSubmit={ onSubmit }
