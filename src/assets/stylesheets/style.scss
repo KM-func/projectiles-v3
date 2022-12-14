@@ -209,6 +209,9 @@ nav{
                         background-image: url("../images/eye_closed.svg");
                         width: 20px;
                         height: 20px;
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
                     } .eye-closed:hover{
                         background-color: transparent;
                     }
@@ -217,6 +220,9 @@ nav{
                         background-image: url("../images/eye_open.svg");
                         width: 20px;
                         height: 20px;   
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
                     } .eye-open:hover{
                         background-color: transparent;
                     }
