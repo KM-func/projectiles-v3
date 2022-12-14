@@ -7,7 +7,7 @@ import Overview from "../../assets/images/overview.png";
 import { useState } from 'react';
 import LoginForm from "./LoginForm";
 
-export default function LoginSignup(props){
+export default function Signup(props){
     const [loginMode, setMode] = useState(false);
     const changeToLogin = (event) =>{
         event.preventDefault();
@@ -56,9 +56,7 @@ export default function LoginSignup(props){
             {/* add conditional if signup or login form appears */}
             <div className="form-container">
                 <img src={Trails2} alt="trails"/> 
-                {
-                    loginMode ? <SignupForm changeToLogin={changeToLogin}/> : <LoginForm changeToLogin={changeToLogin}/>
-                }
+                <SignupForm/>
                 <img src={Trails2} className="flipped" alt="trails"/>
                 <p>
                     Copyright © 2022 funCoin group 
