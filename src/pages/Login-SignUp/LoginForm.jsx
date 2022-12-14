@@ -32,12 +32,15 @@ export default function LoginForm(props){
     }
     
     const togglePassword = (e) => {
-        e.preventDefault();
-        if(showPassword === false){
-            setShowPassword(true);
-        } else{
-            setShowPassword(false);
-        }
+        if(e.target.id === "toggle-password"){
+            if(e.target.classList.contains("eye-open")){
+                e.target.classList.remove("eye-open");
+                e.target.classList.add("eye-closed"); 
+            } else {
+                e.target.classList.remove("eye-closed");
+                e.target.classList.add("eye-open");
+            }
+            showPassword === false ? setShowPassword(true) : setShowPassword(false)
     }
     return(
         <div className='form-div'>
@@ -64,8 +67,10 @@ export default function LoginForm(props){
                         <div className="mb-3" onBlur={e => checkErrors("password", meta.error)} onChange={e => checkErrors("password", meta.error)} onClick={e => checkErrors("password", meta.error)}>
                             <label>Password</label>
                             <div className="password-div"> 
-                                <input {...input} type={showPassword? "text" : "password"} id="password" placeholder="Password" />
-                                <a href="/" onClick={togglePassword}><img src={showPassword ? EyeClosed : EyeOpen} alt="show/hide password icon"/> </a>
+                                <input {...input} type={showPassword? "text" : "password"} id="confirmPassword" placeholder="Password" />
+                                <button id="toggle-confirm-password" type="button" className="eye-open" onClick={togglePassword}>
+                                    {/* <img src={showPassword ? EyeClosed : EyeOpen} alt="show/hide password icon"/> */}
+                                </button>
                             </div>
                             {meta.error && meta.touched && <span>{meta.error}</span>}
                         </div>
