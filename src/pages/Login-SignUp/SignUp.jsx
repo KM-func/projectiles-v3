@@ -7,7 +7,7 @@ import Overview from "../../assets/images/overview.png";
 import { useState } from 'react';
 import LoginForm from "./LoginForm";
 
-export default function LoginSignup(props){
+export default function SignUp(props){
     const [loginMode, setMode] = useState(false);
     const changeToLogin = (event) =>{
         event.preventDefault();
