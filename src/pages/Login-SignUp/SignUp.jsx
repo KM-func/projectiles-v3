@@ -2,34 +2,16 @@ import SignupForm from "./SignupForm";
 import Trails2 from "../../assets/images/trails2.svg";
 import Trails1 from "../../assets/images/trails.svg";
 import Carousel from 'react-bootstrap/Carousel';
-import Kanban from "../../assets/images/kanban.png"
-import Overview from "../../assets/images/overview.png"
+import Kanban from "../../assets/images/kanban.png";
+import Overview from "../../assets/images/overview.png";
 import { useState } from 'react';
 import LoginForm from "./LoginForm";
 
-<<<<<<< HEAD:src/pages/Login-SignUp/SignUp.jsx
 export default function Signup(props){
     const [loginMode, setMode] = useState(false);
     const changeToLogin = (event) =>{
         event.preventDefault();
         loginMode ? setMode(false) : setMode(true);
-=======
-export default function LoginSignup(props){
-    const [loginMode, setMode] = useState(false)
-    const changeToLogin = (e) =>{
-
-        let elements = document.getElementsByTagName("input");
-        for (var i=0; i < elements.length; i++) { 
-            elements[i].value = ""; 
-        }
-        
-        e.preventDefault()
-        if(loginMode === false){
-            setMode(true)
-        } else{
-            setMode(false)
-        }
->>>>>>> parent of 0d46944 (adjustments acc. to code review):src/pages/Login-SignUp/LoginSignup.jsx
     } 
     return(
         <div className="login-signup">
