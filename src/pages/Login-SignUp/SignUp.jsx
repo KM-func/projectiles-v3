@@ -3,16 +3,9 @@ import Trails2 from "../../assets/images/trails2.svg";
 import Trails1 from "../../assets/images/trails.svg";
 import Carousel from 'react-bootstrap/Carousel';
 import Kanban from "../../assets/images/kanban.png";
-import Overview from "../../assets/images/overview.png";
-import { useState } from 'react';
-import LoginForm from "./LoginForm";
+import Overview from "../../assets/images/overview.png"; 
 
-export default function SignUp(props){
-    const [loginMode, setMode] = useState(false);
-    const changeToLogin = (event) =>{
-        event.preventDefault();
-        loginMode ? setMode(false) : setMode(true);
-    } 
+export default function SignUp(props){ 
     return(
         <div className="login-signup">
             <div className="carousel-container">
