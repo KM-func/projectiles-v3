@@ -20,16 +20,36 @@ export default function Overview(props){
                 </div>
                 <div className="body">
                     <div className="description">
-                        
+                        <div className="header">
+
+                        </div>
+                        <div className="body">
+
+                        </div>
                     </div>
                     <div className="history">
-                        
+                        <div className="header">
+                            
+                        </div>
+                        <div className="body">
+
+                        </div>
                     </div>
                     <div className="kanban">
+                        <div className="header">
                         
+                        </div>
+                        <div className="body">
+    
+                        </div>
                     </div>
                     <div className="details">
+                        <div className="header">
+                            
+                        </div>
+                        <div className="body">
 
+                        </div>
                     </div>
                 </div>
             </div>
