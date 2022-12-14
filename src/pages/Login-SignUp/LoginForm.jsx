@@ -69,8 +69,7 @@ export default function LoginForm(props){
                             <label>Password</label>
                             <div className="password-div"> 
                                 <input {...input} type={showPassword? "text" : "password"} id="confirmPassword" placeholder="Password" />
-                                <button id="toggle-confirm-password" type="button" className="eye-open" onClick={togglePassword}>
-                                    {/* <img src={showPassword ? EyeClosed : EyeOpen} alt="show/hide password icon"/> */}
+                                <button id="toggle-password" type="button" className="eye-open" onClick={togglePassword}> 
                                 </button>
                             </div>
                             {meta.error && meta.touched && <span>{meta.error}</span>}
