@@ -1,20 +1,15 @@
-import { Form , Field } from "react-final-form";
-<<<<<<< Updated upstream
+import { Form , Field } from "react-final-form"; 
 import { useState } from "react";
-import EyeOpen from "../../assets/images/eye_open.svg"
-import EyeClosed from "../../assets/images/eye_closed.svg"
-=======
-import { useState } from "react"; 
-import {invalid_chars, email_pattern} from "../../constants/constants.js"
-import { Link } from "react-router-dom";
->>>>>>> Stashed changes
+import EyeOpen from "../../assets/images/eye_open.svg";
+import EyeClosed from "../../assets/images/eye_closed.svg" ; 
+import {invalid_chars, email_pattern} from "../../constants/constants.js";
+import { Link } from "react-router-dom"; 
 
 export default function SignupForm(props){
     const [showPassword, setShowPassword] = useState(false);
     const [showConfPassword, setShowConfPassword] = useState(false);
 
-    const togglePassword = (e) => {
-        // e.preventDefault()
+    const togglePassword = (e) => { 
         if(e.target.id === "toggle-password"){
             if(e.target.classList.contains("eye-open")){
                 e.target.classList.remove("eye-open");
@@ -33,23 +28,9 @@ export default function SignupForm(props){
                 e.target.classList.add("eye-open");
             }
             showConfPassword === false ? setShowConfPassword(true) : setShowConfPassword(false)
-        }
-        // if(showPassword === false){
-        //     setShowPassword(true);
-        // } else{
-        //     setShowPassword(false);
-        // }
+        } 
         console.log(e.target)
-    }
-    // const toggleConfPassword = (e) => {
-    //     e.preventDefault()
-    //     if(showConfPassword === false){
-    //         setShowConfPassword(true);
-    //     } else{
-    //         setShowConfPassword(false);
-    //     }
-    // }
-
+    } 
     const onSubmit = (e) =>{
         console.log(e);
     }

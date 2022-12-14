@@ -1,11 +1,8 @@
 import { useState } from "react";
-import { Form , Field } from "react-final-form";
-<<<<<<< Updated upstream
+import { Form , Field } from "react-final-form"; 
 import EyeOpen from "../../assets/images/eye_open.svg";
-import EyeClosed from "../../assets/images/eye_closed.svg";
-=======
-import { Link } from "react-router-dom";
->>>>>>> Stashed changes
+import EyeClosed from "../../assets/images/eye_closed.svg"; 
+import { Link } from "react-router-dom"; 
 
 export default function LoginForm(props){
     const [showPassword, setShowPassword] = useState(false);
