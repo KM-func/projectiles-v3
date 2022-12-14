@@ -1,7 +1,13 @@
 import { Form , Field } from "react-final-form";
+<<<<<<< Updated upstream
 import { useState } from "react";
 import EyeOpen from "../../assets/images/eye_open.svg"
 import EyeClosed from "../../assets/images/eye_closed.svg"
+=======
+import { useState } from "react"; 
+import {invalid_chars, email_pattern} from "../../constants/constants.js"
+import { Link } from "react-router-dom";
+>>>>>>> Stashed changes
 
 export default function SignupForm(props){
     const [showPassword, setShowPassword] = useState(false);
@@ -82,7 +88,7 @@ export default function SignupForm(props){
         <div className='form-div'>
             <div className='form-header'>
                 <h2>Sign Up </h2>
-                <p>Already have an account? <a onClick={props.changeToLogin} href="/">Log in</a></p>
+                <p>Already have an account? <Link to="/login">Log in</Link></p>
             </div>
             <Form 
             onSubmit={ onSubmit }
