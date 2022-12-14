@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./assets/stylesheets/style.scss"
-import Login from "./pages/Login-SignUp/Login"; 
+import LogIn from "./pages/Login-SignUp/LogIn"; 
 import SignUp from "./pages/Login-SignUp/SignUp"
 import Overview from "./pages/Overview/Overview"
 import { Routes, Route, Link } from "react-router-dom";
@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<SignUp/>} />
           <Route exact path="/signup" element={<SignUp/>} />  
-          <Route exact path="/login" element={<Login/>} /> 
+          <Route exact path="/login" element={<LogIn/>} /> 
           <Route exact path="/overview" element={<Overview/>} /> 
         </Routes>
       </div> 
