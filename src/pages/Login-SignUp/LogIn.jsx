@@ -5,7 +5,7 @@ import Kanban from "../../assets/images/kanban.png";
 import Overview from "../../assets/images/overview.png"; 
 import LoginForm from "./LoginForm";
 
-export default function SignUp(props){ 
+export default function LogIn(props){ 
     return(
         <div className="login-signup">
             <div className="carousel-container">
