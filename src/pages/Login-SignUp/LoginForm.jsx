@@ -41,6 +41,7 @@ export default function LoginForm(props){
                 e.target.classList.add("eye-open");
             }
             showPassword === false ? setShowPassword(true) : setShowPassword(false)
+        }
     }
     return(
         <div className='form-div'>
