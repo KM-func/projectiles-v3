@@ -7,29 +7,11 @@ import Overview from "../../assets/images/overview.png"
 import { useState } from 'react';
 import LoginForm from "./LoginForm";
 
-<<<<<<< Updated upstream:src/pages/Login-SignUp/LoginSignup.jsx
-export default function LoginSignup(props){
-    const [loginMode, setMode] = useState(false)
-    const changeToLogin = (e) =>{
-
-        let elements = document.getElementsByTagName("input");
-        for (var i=0; i < elements.length; i++) { 
-            elements[i].value = ""; 
-        }
-        
-        e.preventDefault()
-        if(loginMode === false){
-            setMode(true)
-        } else{
-            setMode(false)
-        }
-=======
 export default function Login(props){
     const [loginMode, setMode] = useState(false);
     const changeToLogin = (event) =>{
         event.preventDefault();
         loginMode ? setMode(false) : setMode(true);
->>>>>>> Stashed changes:src/pages/Login-SignUp/Login.jsx
     } 
     return(
         <div className="login-signup">
