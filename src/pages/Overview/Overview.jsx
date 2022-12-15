@@ -1,28 +1,32 @@
+import AddIcon from "../../assets/images/add-icon.svg"
+
 export default function Overview(props){
     
     return(
         <div className="overview">
             <div className="project-list">
                 <div className="header">
-                    ProjectList
+                    <h2>ProjectList</h2>
                     <button type="button">
+                        <img src={AddIcon} alt="add icon"/>
                         Add new project
                     </button>
                 </div>
                 <div className="body">
-                    <button type="button">Project 1</button>
-                    <button type="button">Project 1</button>
-                    <button type="button">Project 1</button>
+                    <a href="/overview">Project 1</a>
+                    <a href="/overview">Project 1</a>
+                    <a href="/overview">Project 1</a>
                 </div>
             </div>
-            <div className="overview-body">
+
+            <div className="overview-content">
                 <div className="header">
-                    <div>
+                    <div className="title">
                         <h2>Title</h2>
-                        <h2>Target Completion</h2>
+                        <h3>Target Completion</h3>
                     </div>
                     <div>
-                        <h2>Created at:</h2>
+                        <h3>Created at:</h3>
                         <h2>Project Status</h2>
                     </div>
                     <div>
@@ -30,21 +34,22 @@ export default function Overview(props){
                         <button type="button">edit</button>
                     </div>
                 </div>
-                <div className="body">
+                <div className="content">
                     <div className="description">
                         <div className="header">
-
+                            description
+                            <button type="button">edit</button>
                         </div>
                         <div className="body">
-
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla error omnis deserunt dolores accusamus, quis minus, debitis atque, provident natus nemo repudiandae enim veniam incidunt quisquam fuga magnam dolorem excepturi.
                         </div>
                     </div>
                     <div className="history">
                         <div className="header">
-                            
+                            history
                         </div>
                         <div className="body">
-
+                            <p>
                         </div>
                     </div>
                     <div className="kanban">
@@ -75,12 +80,6 @@ export default function Overview(props){
                         </div>
                     </div>
                     <div className="details">
-                        <div className="header">
-                            
-                        </div>
-                        <div className="body">
-
-                        </div>
                     </div>
                 </div>
             </div>

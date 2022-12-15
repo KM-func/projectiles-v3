@@ -5,7 +5,9 @@ $darkest-blue: #0A0B12;
 $light-gray: #4E4F56;
 $indigo: #4453D7;
 $red: #D74444;
+
 body{
+    
     background-color: $darkest-blue;
     color: white;
     font-family: Archivo;
@@ -16,8 +18,7 @@ body{
         letter-spacing: 2px;
     } 
     
-    .App{ 
-        
+    .App{
         margin: auto; 
         .content{
             max-width: 1920px;
@@ -261,6 +262,146 @@ nav{
     .flipped{
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);  
+    }
+}
+
+.overview{
+    width: fit-content;
+    margin: auto;
+    $border-width: 2px;
+    $gray-border-template: $border-width solid $faded-gray;
+
+   
+    display: flex;
+    gap: 10px;
+    padding: 10px;  
+    .header{
+        background-color: $darkest-blue;
+        border: $gray-border-template; 
+        height: 60px;
+    }
+    .project-list{
+        width: calc(180px);
+        background-color: $dark-teal;
+        height: 895px;
+        .header{
+            display: flex;
+            align-items: center;  
+            flex-direction: column;
+            text-align: center;
+            padding: 7px 5px;
+            border-radius: 0px 0px 0px 0px;
+            h2{
+                font-size: 18px;
+                margin: 0px 0px;
+            }
+            button{
+                width: 140px;
+                font-size: 14px;
+                background: none;
+                border: $gray-border-template;
+                color: white;
+                border-radius: 25px;
+                transition: all 0.2s;
+                img{
+                    margin-right: 5px;
+                    width: 12px;
+                }
+            } button:hover{
+                background-color: $faded-gray; 
+            }
+        }
+        .body{
+
+            a{
+                display: block;
+            }
+        }
+    }
+    .overview-content{
+        background-color: $dark-teal;
+        width: 1200px;
+        h2{
+            font-size: 18px;
+            margin: 0px;
+        }
+        h3{
+            font-size: 16px;
+            margin: 0px;
+        }
+        .header{
+            display: grid;
+            // grid-template-areas:
+            //     "title created-at delete"
+            //     "target-completion project-status edit";
+            height: 60px;
+            grid-template-columns: 2fr 2fr 60px;
+            align-items: center;
+            .title{
+                text-align: left;
+            }
+            div{
+                text-align: right;
+                padding: 0px 10px;  
+            }
+        }
+        .content{
+            padding: 10px 5px;
+            display: grid;
+            grid-template-areas:
+                "desc hist details"
+                "kanban kanban details";
+            grid-template-columns: 515px 515px 150px;
+            grid-template-rows: 300px min(510px);
+            gap: 5px;
+            .header{
+                background: none;
+                border: none;
+            }
+            .description{
+                grid-area: desc;
+                background-color: $darkest-blue;
+                border: $gray-border-template;
+
+                .body{
+                    width: 100%;
+                    height: 265px;
+                    word-wrap: break-word;
+                    padding: 5px 15px;
+                }
+            }
+            .history{
+                grid-area: hist;
+                background-color: $darkest-blue;
+                border: $gray-border-template;
+
+                .body{
+                    width: 100%;
+                    height: 265px;
+                    word-wrap: break-word;
+                    padding: 5px 15px;
+                }
+            }
+            .kanban{
+                grid-area: kanban;
+                background-color: $darkest-blue;
+                border: $gray-border-template;
+
+                .body{
+                    width: 100%;
+                    height: 265px;
+                    word-wrap: break-word;
+                    padding: 5px 15px;
+                }
+                
+            }
+            .details{
+                grid-area: details;
+                background-color: $darkest-blue;
+                border: $gray-border-template;
+                height: 814px;
+            }
+        }
     }
 }
 
