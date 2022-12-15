@@ -4,12 +4,13 @@ $dark-teal: #151C1D;
 $darkest-blue: #0A0B12;
 $light-gray: #4E4F56;
 $indigo: #4453D7;
+$white: #ffffff;
 $red: #D74444;
 
 body{
     
     background-color: $darkest-blue;
-    color: white;
+    color: $white;
     font-family: Archivo;
     padding: 0px;
     margin: 0px;
@@ -29,6 +30,13 @@ body{
             }
         }
     } 
+
+    p{
+        margin: 0px;
+    }
+    h1, h2, h3{
+        margin: 0px;
+    }
 } 
 nav{
     display: flex; 
@@ -306,9 +314,13 @@ nav{
                 img{
                     margin-right: 5px;
                     width: 12px;
+                    transition: all 0.2s;
                 }
             } button:hover{
                 background-color: $faded-gray; 
+                img{
+                    width: 0px;
+                }
             }
         }
         .body{
@@ -357,6 +369,9 @@ nav{
             .header{
                 background: none;
                 border: none;
+                height: fit-content;
+                display: flex;
+                gap: 5px;
             }
             .description{
                 grid-area: desc;
@@ -387,19 +402,83 @@ nav{
                 background-color: $darkest-blue;
                 border: $gray-border-template;
 
-                .body{
-                    width: 100%;
-                    height: 265px;
-                    word-wrap: break-word;
-                    padding: 5px 15px;
-                }
-                
+                .board{
+                    display: flex;
+                    gap: 10px;
+                    padding: 0px 20px;
+                    .list{
+                        display: flex;
+                        flex-direction: column;
+                        width: 200px;
+
+                        .body{
+                            background-color: $dark-teal;
+                            padding: 5px;
+                            .list-item{
+                                padding: 4px 6px;
+                                border: 1px $white solid;
+                                width: 190px;
+                                margin: 0px auto 5px;
+                                background-color: $darkest-blue;
+                                *{
+                                    margin: 0px;
+                                }
+                            }
+                            .add-item{
+                                display: flex;
+                                padding: 4px 6px;
+                                border: 1px $white solid;
+                                width: 190px;
+                                margin: 0px auto 5px;
+                                background-color: $darkest-blue;
+                                border-radius: 4px;
+                                input{
+                                    width: 145px;
+                                }
+                            }
+                        }
+                    }
+                }                
             }
             .details{
                 grid-area: details;
                 background-color: $darkest-blue;
                 border: $gray-border-template;
                 height: 814px;
+                
+                h2{
+                    text-align: center;
+                }
+                .project-type{
+                    
+                }
+                .tags{
+                    width: 100%;
+                    .body{
+                        
+                        p{
+                            font-size: 14px;
+                            margin: 0px auto 5px;
+                            padding: 2px 5px;
+                            width: 130px; 
+                            border-radius: 4px;
+                            background-color: $red;
+                        }
+                    }
+                }
+                .team-members{
+                    .body{
+                        p{
+                            font-size: 14px;
+                            margin: 0px auto 5px;
+                            padding: 2px 5px;
+                            width: 130px; 
+                            border-radius: 4px; 
+                            border: 1px solid $white;
+                        }
+                        
+                    }
+                }
             }
         }
     }

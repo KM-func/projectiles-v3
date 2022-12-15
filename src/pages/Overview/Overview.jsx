@@ -49,7 +49,7 @@ export default function Overview(props){
                             history
                         </div>
                         <div className="body">
-                            <p>
+                            <p></p>
                         </div>
                     </div>
                     <div className="kanban">
@@ -59,27 +59,77 @@ export default function Overview(props){
                         </div>
                         <div className="board">
                             <div className="list">
-                                <div className="list-item">
-                                    <h3>Delete this</h3>
-                                    <p>Assigned to: AK Mana</p>
-                                    <p className="grayed">Deadline: August 22, 2022</p>
+                                <div className="header">
+                                    <h3>Backlog</h3>
+                                    <button type="button">+</button>
                                 </div>
-                                <div className="list-item">
-                                    <h3>Delete this</h3>
-                                    <p>Assigned to: AK Mana</p>
-                                    <p className="grayed">Deadline: August 22, 2022</p>
+                                <div className="body">
+                                    <div className="list-item">
+                                        <h3>Delete this</h3>
+                                        <p>Assigned to: AK Mana</p>
+                                        <p className="grayed">Deadline: August 22, 2022</p>
+                                    </div>
+                                    <div className="list-item">
+                                        <h3>Delete this</h3>
+                                        <p>Assigned to: AK Mana</p>
+                                        <p className="grayed">Deadline: August 22, 2022</p>
+                                    </div>
+                                    <form className="add-item">
+                                        <input type="text" id="add-task"/>
+                                        <button type="button">+</button>
+                                    </form>
                                 </div>
                             </div>
                             <div className="list">
-                                <div className="list-item">
-                                    <h3>Delete this</h3>
-                                    <p>Assigned to: AK Mana</p>
-                                    <p className="grayed">Deadline: August 22, 2022</p>
+                            <div className="header">
+                                    <h3>Backlog</h3>
+                                    <button type="button">+</button>
+                                </div>
+                                <div className="body">
+                                    <div className="list-item">
+                                        <h3>Delete this</h3>
+                                        <p>Assigned to: AK Mana</p>
+                                        <p className="grayed">Deadline: August 22, 2022</p>
+                                    </div>
+                                    <div className="list-item">
+                                        <h3>Delete this</h3>
+                                        <p>Assigned to: AK Mana</p>
+                                        <p className="grayed">Deadline: August 22, 2022</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="details">
+                        <h2>Project Details</h2>
+                        <form className="project-type">
+                            <label>Project Type</label>
+                            <select>
+                                <option value="Personal">Personal</option>
+                                <option value="Work">Work</option>
+                                <option value="Leisure">Leisure</option>
+                            </select>
+                        </form>
+                        <div className="tags">
+                            <div className="header">
+                                <p>Tags</p>
+                                <button type="button">+</button>
+                            </div>
+                            <div className="body">
+                                <p>Coding</p>
+                                <p>Art</p>
+                            </div>
+                        </div>
+                        <div className="team-members">
+                            <div className="header">
+                                <p>Tags</p>
+                                <button type="button">+</button>
+                            </div>
+                            <div className="body">
+                                <p>Me <span>(admin)</span></p>
+                                <p>Alvin Pormalejo <span>(editor)</span></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
