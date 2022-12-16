@@ -1,6 +1,6 @@
 import { Form , Field } from "react-final-form";
 import { useState } from "react"; 
-import {invalid_chars, email_pattern} from "../../constants/constants.js"
+import {invalid_chars, email_pattern} from "../../constants/constants.js";
 import { Link } from "react-router-dom";
 
 export default function SignupForm(props){
