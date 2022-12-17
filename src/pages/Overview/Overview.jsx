@@ -6,12 +6,21 @@ import Kanban from "./Kanban/Kanban";
 import ProjectType from "./ProjectType/ProjectType";
 import ProjectTags from "./ProjectTags/ProjectTags";
 import TeamMembers from "./TeamMembers/TeamMembers";
+import { useState } from "react";
+import EditProjectHeader from "./EditProjectHeader";
 
-export default function Overview(props){    
+export default function Overview(props){
+    const [showModal, setShowModal] = useState(false);
+    
+    const showAddProjectModal = (e) =>{
+        showModal ? setShowModal(false) : setShowModal(true);
+        console.log(showModal);
+    }
     return(
         <div className="overview">
             <ProjectList/>
             <div className="overview-content">
+                <EditProjectHeader show={showModal} close={showAddProjectModal} />
                 <div className="header">
                     <div className="title">
                         <h2>Title</h2>
@@ -23,7 +32,7 @@ export default function Overview(props){
                     </div>
                     <div>
                         <button type="button">X</button>
-                        <button type="button">edit</button>
+                        <button type="button" onClick={showAddProjectModal}>edit</button>
                     </div>
                 </div>
                 <div className="content">
