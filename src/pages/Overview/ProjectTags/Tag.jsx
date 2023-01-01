@@ -1,5 +1,5 @@
 export default function Tag(props){
     return(
-        <p>{props.tag}</p>
+        <p className={props.color}>{props.tag}</p>
     )
 }

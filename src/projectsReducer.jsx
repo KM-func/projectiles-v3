@@ -2,12 +2,12 @@ export const initialState = {
     projects: [
         {
             projectID: "As2vz2d2123s",
-            projectName: "Meme Project",
-            targetCompletion: "June 12, 2022",
+            projectTitle: "Meme Project",
+            targetCompletion: "September 31, 2022",
             projectStatus: "not active",
-            createdAt: "June 2, 2022",
+            createdAt: "August 12, 2022",
             description: "This is a meme project fams",
-            projectType: "hobby",
+            projectType: "Work",
             tags: [
                 {color:"lilac", name: "coding"},
                 {color:"bright-red", name: "practice"},
@@ -15,7 +15,7 @@ export const initialState = {
                 {color:"subtle-green", name: "meme2"}
             ],
             teamMembers: [
-                {
+                {   
                     name: "KM Funcion",
                     role: "admin"
                 },
@@ -29,7 +29,7 @@ export const initialState = {
                 }
             ],
             history: [],
-            components: [
+            kanban: [
                 {
                     name: "Backlog",
                     tasks: [
@@ -121,12 +121,12 @@ export const initialState = {
         }, 
         {
             projectID: "Asd2123s",
-            projectName: "Not A Project",
+            projectTitle: "HELLO!",
             targetCompletion: "June 12, 2022",
             projectStatus: "cancelled",
             createdAt: "June 2, 2022",
             description: "This is not project fams",
-            projectType: "hobby",
+            projectType: "Leisure",
             tags: [
                 {color:"subtle-green", name: "meme2"},
                 {color:"bright-red", name: "practice"},
@@ -148,7 +148,7 @@ export const initialState = {
                 }
             ],
             history: [],
-            components: [
+            kanban: [
                 {
                     name: "Backlog",
                     tasks: [
@@ -240,20 +240,139 @@ export const initialState = {
         }
     ],
     currentProject : {
-        projectID: "",
-        projectName: "",
-        targetCompletion: "",
-        projectStatus: "",
-        createdAt: "",
-        description: "",
-        projectType: "",
-        tags: [],
-        teamMembers: [],
-        history: [],
-        components: []
+        projectID: "asdasdasd",
+        projectTitle: "TEST PROJECT",
+        targetCompletion: "May 1, 2022",
+        projectStatus: "Ongoing",
+        createdAt: "January 14, 2022",
+        description: "Zǎo shang hǎo zhōng guó! Xiàn zài wǒ yǒu bing chilling Wǒ hěn xǐ huān bing chilling Dàn shì sù dù yǔ jī qíng jiǔ ' bǐ bing chilling 'sù dù yǔ jī qíng, sù dù yǔ jī qíng jiǔ' Wǒ zuì xǐ huān Suǒ yǐ xiàn zài shì yīn yuè shí jiān Zhǔn bèi Yī, èr, sān",
+        projectType: "Leisure",
+        tags: [
+            {color:"subtle-green", name: "meme2"},
+            {color:"bright-red", name: "practice"},
+            {color:"lilac", name: "coding"},
+            {color:"deep-blue", name: "web development"},
+        ],
+        teamMembers: [
+            {
+                name: "KM Funcion",
+                role: "admin"
+            },
+            {
+                name: "Millicent Anger",
+                role: "editor"
+            },
+            {
+                name: "Morgana Fox",
+                role: "editor"
+            }
+        ],
+        history: [
+            {
+                date: "February 31, 2023",
+                entry: "Walter became sus"
+            },
+            {
+                date: "March 21, 2023",
+                entry: "Jesse became sus"
+            },
+            {
+                date: "June 31, 2023",
+                entry: "Hank found the sussy baka impostor"
+            }
+        ],
+        kanban: [
+            {
+                name: "Backlog",
+                tasks: [
+                    {
+                        taskID: "asd231g3",
+                        name: "PenPen 01",
+                        assignedTo: "KM Funcion",
+                        deadline: "June 5, 2022",
+                        status: "Backlog",
+                        description: "This is a task"
+                    },
+                    {
+                        taskID: "as64313",
+                        name: "Task 02",
+                        assignedTo: "KM Funcion",
+                        deadline: "June 5, 2022",
+                        status: "Backlog",
+                        description: "This is a task"
+                    },
+                    {
+                        taskID: "as13zx213",
+                        name: "Task 03",
+                        assignedTo: "KM Funcion",
+                        deadline: "June 5, 2022",
+                        status: "Backlog",
+                        description: "This is a task"
+                    }
+                ]
+            },
+            {
+                name: "Doing",
+                tasks: [
+                    {
+                        taskID: "asd2qw313",
+                        name: "Task 01",
+                        assignedTo: "KM Funcion",
+                        deadline: "June 5, 2022",
+                        status: "Doing",
+                        description: "This is a task"
+                    },
+                    {
+                        taskID: "as643gf13",
+                        name: "Task 02",
+                        assignedTo: "KM Funcion",
+                        deadline: "June 5, 2022",
+                        status: "Doing",
+                        description: "This is a task"
+                    },
+                    {
+                        taskID: "as132ds13",
+                        name: "Task 03",
+                        assignedTo: "KM Funcion",
+                        deadline: "June 5, 2022",
+                        status: "Doing",
+                        description: "This is a task"
+                    }
+                ]
+            },
+            {
+                name: "Done",
+                tasks: [
+                    {
+                        taskID: "asd2qwe313",
+                        name: "Orca-stra 01",
+                        assignedTo: "KM Funcion",
+                        deadline: "June 5, 2022",
+                        status: "Done",
+                        description: "This is a task"
+                    },
+                    {
+                        taskID: "as64ew313",
+                        name: "Task 02",
+                        assignedTo: "KM Funcion",
+                        deadline: "June 5, 2022",
+                        status: "Done",
+                        description: "This is a task"
+                    },
+                    {
+                        taskID: "as1nhh3213",
+                        name: "Task 03",
+                        assignedTo: "KM Funcion",
+                        deadline: "June 5, 2022",
+                        status: "Done",
+                        description: "This is a task"
+                    }
+                ]
+            }
+        ]
     },
     projectTemplate: {
-        projectName: "",
+        projectTitle: "",
         targetCompletion: "",
         projectStatus: "Not Started",
         createdAt: "",
@@ -262,7 +381,7 @@ export const initialState = {
         tags: [],
         teamMembers: [],
         history: [],
-        components: [
+        kanban: [
             {
                 name: "Backlog",
                 tasks: []
@@ -329,7 +448,7 @@ const projectsReducer = (state, action) => {
                     (project, index) => 
                         project.projectID === payload.projectID ?
                             {...state.projects[index],
-                                projectName: payload.projectName,
+                                projectTitle: payload.projectTitle,
                                 history: [
                                     ...state.projects[index].history,
                                     payload.historyUpdate
@@ -339,7 +458,7 @@ const projectsReducer = (state, action) => {
                 ),
                 currentProject:{
                     ...state.currentProject,
-                    projectName: payload.projectName,
+                    projectTitle: payload.projectTitle,
                     history: [
                         ...state.currentProject.history,
                         payload.historyUpdate
@@ -565,12 +684,12 @@ const projectsReducer = (state, action) => {
                             project.projectID === payload.projectID ?
                                 {...state.projects[index],
                                     
-                                    components: state.projects[index].components.map(
+                                    kanban: state.projects[index].kanban.map(
                                         (component, index2) => 
                                             component.name === payload.task.status ?
-                                            { ...state.projects[index].components[index2],
+                                            { ...state.projects[index].kanban[index2],
                                                 tasks: [
-                                                    ...state.projects[index].components[index2].tasks,
+                                                    ...state.projects[index].kanban[index2].tasks,
                                                     payload.task
                                                 ],
                                                    
@@ -584,12 +703,12 @@ const projectsReducer = (state, action) => {
                     ),
                     currentProject:{
                         ...state.currentProject,
-                        components: state.currentProject.components.map(
+                        kanban: state.currentProject.kanban.map(
                             (component, index) => 
                                 component.name === payload.task.status ?
-                                { ...state.currentProject.components[index],
+                                { ...state.currentProject.kanban[index],
                                     tasks: [
-                                        ...state.currentProject.components[index].tasks,
+                                        ...state.currentProject.kanban[index].tasks,
                                         payload.task
                                     ],  
                                 } : component
@@ -607,13 +726,13 @@ const projectsReducer = (state, action) => {
                         (project, index) => 
                             project.projectID === payload.projectID ?
                                 {...state.projects[index],
-                                    components: state.projects[index].components.map(
+                                    kanban: state.projects[index].kanban.map(
                                         (component, index2) => 
                                             component.name === payload.task.status ?
-                                            { ...state.projects[index].components[index2],
-                                                tasks: state.projects[index].components[index2].tasks.map(
+                                            { ...state.projects[index].kanban[index2],
+                                                tasks: state.projects[index].kanban[index2].tasks.map(
                                                     (task, index3) =>
-                                                        state.projects[index].components[index2].tasks[index3].taskID === payload.task.taskID ?
+                                                        state.projects[index].kanban[index2].tasks[index3].taskID === payload.task.taskID ?
                                                             {
                                                                 ...payload.task
                                                             } : task
@@ -627,14 +746,14 @@ const projectsReducer = (state, action) => {
                     ),
                     currentProject:{
                         ...state.currentProject,
-                        components: state.currentProject.components.map(
+                        kanban: state.currentProject.kanban.map(
                             (component, index) => 
                                 component.name === payload.task.status ?
                                 { 
-                                    ...state.currentProject.components[index],
-                                    tasks: state.currentProject.components[index].tasks.map(
+                                    ...state.currentProject.kanban[index],
+                                    tasks: state.currentProject.kanban[index].tasks.map(
                                         (task, index2) =>
-                                            state.currentProject.components[index].tasks[index2].taskID === payload.task.taskID ?
+                                            state.currentProject.kanban[index].tasks[index2].taskID === payload.task.taskID ?
                                                 {
                                                     ...payload.task
                                                 } : task
@@ -654,11 +773,11 @@ const projectsReducer = (state, action) => {
                         (project, index) => 
                             project.projectID === payload.projectID ?
                                 {...state.projects[index],
-                                    components: state.projects[index].components.map(
+                                    kanban: state.projects[index].kanban.map(
                                         (component, index2) => 
                                             component ?
-                                            { ...state.projects[index].components[index2],
-                                                tasks: state.projects[index].components[index2].tasks.filter(
+                                            { ...state.projects[index].kanban[index2],
+                                                tasks: state.projects[index].kanban[index2].tasks.filter(
                                                     task => task.taskID !== payload.taskID
                                                 )
                                             } : component
@@ -671,11 +790,11 @@ const projectsReducer = (state, action) => {
                     ),
                     currentProject:{
                         ...state.currentProject,
-                        components: state.currentProject.components.map(
+                        kanban: state.currentProject.kanban.map(
                             (component, index) => 
                                 component ?
-                                { ...state.currentProject.components[index],
-                                    tasks: state.currentProject.components[index].tasks.filter(
+                                { ...state.currentProject.kanban[index],
+                                    tasks: state.currentProject.kanban[index].tasks.filter(
                                         task => task.taskID !== payload.taskID
                                     )
                                 } : component
@@ -694,8 +813,8 @@ const projectsReducer = (state, action) => {
                             project.projectID === payload.projectID ?
                                 {
                                     ...state.projects[index],
-                                    components: [
-                                        ...state.projects[index].components,
+                                    kanban: [
+                                        ...state.projects[index].kanban,
                                         payload.component
                                     ],
                                     history: [
@@ -706,8 +825,8 @@ const projectsReducer = (state, action) => {
                     ),
                     currentProject:{
                         ...state.currentProject,
-                        components: [
-                            ...state.currentProject.components,
+                        kanban: [
+                            ...state.currentProject.kanban,
                             payload.component
                         ],
                         history: [
@@ -724,7 +843,7 @@ const projectsReducer = (state, action) => {
                             project.projectID === payload.projectID ?
                                 {
                                     ...state.projects[index],
-                                    components: state.projects[index].components.filter(
+                                    kanban: state.projects[index].kanban.filter(
                                         (component => component.name !== payload.deletedComponent)
                                     ),
                                     history: [
@@ -735,7 +854,7 @@ const projectsReducer = (state, action) => {
                     ),
                     currentProject:{
                         ...state.currentProject,
-                        components: state.currentProject.components.filter(
+                        kanban: state.currentProject.kanban.filter(
                             (component => component.name !== payload.deletedComponent)
                         ),
                         history: [

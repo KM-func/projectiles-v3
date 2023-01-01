@@ -1,5 +1,12 @@
+import useProjects from "../../../ProjectsContext";
+
 export default function Status(props){
+
+    const { currentProject } = useProjects();
+
     return(
-        <option value={props.status}>{props.status}</option>
+        props.status === currentProject.projectStatus ?
+            <option value={props.status} selected>{props.status}</option> :
+            <option value={props.status}>{props.status}</option> 
     )
 }

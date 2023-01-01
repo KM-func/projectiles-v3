@@ -5,16 +5,15 @@ export default function List(props){
     return(
         <div className="list">
             <div className="header">
-                <h3>Backlog</h3>
+                <h3>{props.name}</h3>
                 <button type="button">+</button>
             </div>
-            <div className="body">
-                <Item />
-                <div className="list-item">
-                    <h3>Delete this</h3>
-                    <p>Assigned to: AK Mana</p>
-                    <p className="grayed">Deadline: August 22, 2022</p>
-                </div>
+            <div className="body"> 
+                {
+                    props.tasks.map((task, index)=>{
+                        return(<Item key={index} {...task} />)
+                    })
+                }
                 <AddItem />
             </div>
         </div>

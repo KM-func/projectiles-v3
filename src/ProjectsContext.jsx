@@ -9,6 +9,10 @@ export const ProjectsProvider = ({ children }) => {
     const [ state, dispatch ] = useReducer(projectsReducer, initialState);
     // // have current product be removed from the reducer. let reducer be a simple list? taht is updated based on the current chosen item from the projectList
     
+    const testContext = (message) =>{
+        console.log(message);
+    }
+
     const addNewProject = (project) => {
         const updatedProjects = state.projects.concat(project);
         dispatch({
@@ -38,7 +42,7 @@ export const ProjectsProvider = ({ children }) => {
             })
         }
     }
-    const selectProject = (projectID) =>{
+    const selectProject = projectID =>{
         let newCurrProj = {};
         state.projects.map(
             (project, index) =>
@@ -58,7 +62,7 @@ export const ProjectsProvider = ({ children }) => {
             type: "EDIT_TITLE",
             payload: {
                 projectID: projectID,
-                projectName: newTitle,
+                projectTitle: newTitle,
                 historyUpdate: {
                     date: currentDate,
                     entry: `Changed project name to ${newTitle}`
@@ -181,40 +185,40 @@ export const ProjectsProvider = ({ children }) => {
         })
     }
 
-    const addComponent = (projectID, newComponent) => {
+    const addKanban = (projectID, newKanban) => {
         dispatch({
-            type: "ADD_COMPONENT",
+            type: "ADD_KANBAN",
             payload: {
                 projectID: projectID,
-                component: {
-                    name: newComponent,
+                kanban: {
+                    name: newKanban,
                     tasks: []
                 },
                 historyUpdate: {
                     date: currentDate,
-                    entry: `Added project component "${newComponent}"`
+                    entry: `Added project kanban "${newKanban}"`
                 }
             }
         })
     }
 
-    const deleteComponent = (projectID, deletedComponent) => {
+    const deleteKanban = (projectID, deletedKanban) => {
         dispatch({
-            type: "DELETE_COMPONENT",
+            type: "DELETE_KANBAN",
             payload: {
                 projectID: projectID,
-                deletedComponent: deletedComponent,
+                deletedKanban: deletedKanban,
                 historyUpdate: {
                     date: currentDate,
-                    entry: `Deleted project component "${deletedComponent}"`
+                    entry: `Deleted project kanban "${deletedKanban}"`
                 }
             }
         })
     }
 
-    const addComponentTask = (projectID, newTask) => {
+    const addKanbanTask = (projectID, newTask) => {
         dispatch({
-            type: "ADD_COMPONENT_TASK",
+            type: "ADD_KANBAN_TASK",
             payload: {
                 projectID: projectID,
                 task: newTask,
@@ -226,11 +230,11 @@ export const ProjectsProvider = ({ children }) => {
         })
     }
     
-    const editComponentTask = (projectID, editedTask, oldStatus, oldName) => {
+    const editKanbanTask = (projectID, editedTask, oldStatus, oldName) => {
         if(editedTask.status === oldStatus){
             if(editedTask.name === oldName){
                 dispatch({
-                    type: "EDIT_COMPONENT_TASK",
+                    type: "EDIT_KANBAN_TASK",
                     payload: {
                         projectID: projectID,
                         task: editedTask,
@@ -242,7 +246,7 @@ export const ProjectsProvider = ({ children }) => {
                 })
             } else {
                 dispatch({
-                    type: "EDIT_COMPONENT_TASK",
+                    type: "EDIT_KANBAN_TASK",
                     payload: {
                         projectID: projectID,
                         task: editedTask,
@@ -257,7 +261,7 @@ export const ProjectsProvider = ({ children }) => {
         } else{
             console.log(editedTask)
             dispatch({
-                type: "DELETE_COMPONENT_TASK",
+                type: "DELETE_KANBAN_TASK",
                 payload: {
                     projectID: projectID,
                     taskID: editedTask.taskID
@@ -265,7 +269,7 @@ export const ProjectsProvider = ({ children }) => {
             })
             if(editedTask.name === oldName){
                 dispatch({
-                    type: "ADD_COMPONENT_TASK",
+                    type: "ADD_KANBAN_TASK",
                     payload: {
                         projectID: projectID,
                         task: editedTask,
@@ -277,7 +281,7 @@ export const ProjectsProvider = ({ children }) => {
                 })
             } else {
                 dispatch({
-                    type: "ADD_COMPONENT_TASK",
+                    type: "ADD_KANBAN_TASK",
                     payload: {
                         projectID: projectID,
                         task: editedTask,
@@ -292,7 +296,7 @@ export const ProjectsProvider = ({ children }) => {
     }
     const handleDragDropped = (projectID, editedTask, oldName) => { 
         dispatch({
-            type: "DELETE_COMPONENT_TASK",
+            type: "DELETE_KANBAN_TASK",
             payload: {
                 projectID: projectID,
                 taskID: editedTask.taskID
@@ -301,7 +305,7 @@ export const ProjectsProvider = ({ children }) => {
         if(editedTask.status !== oldName){
             
             dispatch({
-                type: "ADD_COMPONENT_TASK",
+                type: "ADD_KANBAN_TASK",
                 payload: {
                     projectID: projectID,
                     task: editedTask,
@@ -313,7 +317,7 @@ export const ProjectsProvider = ({ children }) => {
             })
         } else {
             dispatch({
-                type: "ADD_COMPONENT_TASK",
+                type: "ADD_KANBAN_TASK",
                 payload: {
                     projectID: projectID,
                     task: editedTask, 
@@ -323,7 +327,7 @@ export const ProjectsProvider = ({ children }) => {
     }
     const deleteTask = (projectID, taskID, taskName, taskStatus) => {
         dispatch({
-            type: "DELETE_COMPONENT_TASK",
+            type: "DELETE_KANBAN_TASK",
             payload: {
                 projectID: projectID,
                 taskID: taskID,
@@ -347,16 +351,17 @@ export const ProjectsProvider = ({ children }) => {
         editProjStatus,
         addTag,
         addMember,
-        addComponentTask,
-        editComponentTask,
+        addKanbanTask,
+        editKanbanTask,
         deleteTask,
-        addComponent,
+        addKanban,
         deleteProject,
         editProjType,
         removeTag,
         removeMember,
-        deleteComponent,
-        handleDragDropped
+        deleteKanban,
+        handleDragDropped,
+        testContext
     }
 
     return <ProjectsContext.Provider value={value}>

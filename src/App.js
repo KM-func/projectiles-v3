@@ -4,9 +4,11 @@ import LogIn from "./pages/Login-SignUp/LogIn";
 import SignUp from "./pages/Login-SignUp/SignUp"
 import Overview from "./pages/Overview/Overview"
 import { Routes, Route, Link } from "react-router-dom";
+import { ProjectsProvider } from './ProjectsContext';
 
 function App() { 
   return (   
+    <ProjectsProvider>
     <div className="App">
       
       <nav>
@@ -27,6 +29,7 @@ function App() {
         </Routes>
       </div> 
     </div> 
+    </ProjectsProvider>
   );
 }
 
